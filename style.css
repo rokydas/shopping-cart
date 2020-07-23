@@ -53,3 +53,19 @@ body{
 	background-color: #2FBE70;
 	border: none;
 }
+
+/* Added by rokydas */
+
+.hidden{
+	display: none;
+}
+
+#payment{
+	text-align: center;
+}
+
+#payment img{
+	width: 100px;
+	height: 100px;
+	margin: 20px 20px;
+}

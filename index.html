@@ -16,10 +16,10 @@
       <div class="container">
          <div class="cart">
             <div class="col-md-12 col-lg-10 mx-auto">
-               <div class="cart-item">
+               <div id="product1-show" class="cart-item">
                   <div class="row">
                      <div class="col-md-7 center-item">
-                        <img src="images/product-1.png" alt="">
+                        <img src="images/product/product-1.png" alt="">
                         <h5>iPhone 11 128GB Black</h5>
                      </div>
                      <div class="col-md-5 center-item">
@@ -29,15 +29,27 @@
                            <button id="product1-plus" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
                         <h5>$<span id="price1">1219</span></h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
+                        <img id="remove1" src="images/icon/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
                </div>
 
-               <div class="cart-item">
+               <div id="product1-delete" class="cart-item hidden">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <h5>1 item removed</h5>
+                     </div>
+                     <div class="col-md-5">
+                           <button id="undo1" style="margin-right: 60px; margin-left: 70px;" class="btn btn-success">Undo</button>
+                           <button id="delete-forever1" class="btn btn-danger">Delete forever</button>
+                     </div>
+                  </div>
+               </div>
+
+               <div id="product2-show" class="cart-item">
                   <div class="row">
                      <div class="col-md-7 center-item mx-auto">
-                        <img src="images/product-2.png" alt="">
+                        <img src="images/product/product-2.png" alt="">
                         <h5>iPhone 11 Silicone Case - Black</h5>
                      </div>
                      <div class="col-md-5 center-item">
@@ -48,7 +60,19 @@
 
                         </div>
                         <h5>$<span id="price2">59</span></h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
+                        <img id="remove2" src="images/icon/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div id="product2-delete" class="cart-item hidden">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <h5>1 item removed</h5>
+                     </div>
+                     <div class="col-md-5">
+                           <button id="undo2" style="margin-right: 60px; margin-left: 70px;" class="btn btn-success">Undo</button>
+                           <button id="delete-forever2" class="btn btn-danger">Delete forever</button>
                      </div>
                   </div>
                </div>
@@ -70,7 +94,14 @@
                   </div>
                </div>
                <div class="col-md-12 pt-4 pb-4">
-                  <button type="button" class="btn btn-success check-out">Check Out</button>
+                  <button id="check-out" type="button" class="btn btn-success check-out">Check Out</button>
+               </div>
+               <div id="payment" class="hidden">
+                  <h2>Choose your payment method</h2>
+                  <img src="images/payment/bkash.jpg" alt="">
+                  <img src="images/payment/nogod.jpg" alt="">
+                  <img src="images/payment/rocket.jpg" alt="">
+                  <img src="images/payment/surecash.jpg" alt="">
                </div>
             </div>
          </div>

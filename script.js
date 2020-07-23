@@ -2,6 +2,22 @@ let product1Plus = document.getElementById('product1-plus');
 let product1Minus = document.getElementById('product1-minus');
 let product2Plus = document.getElementById('product2-plus');
 let product2Minus = document.getElementById('product2-minus');
+let remove1 = document.getElementById('remove1');
+let remove2 = document.getElementById('remove2');
+let product1Show = document.getElementById('product1-show');
+let product2Show = document.getElementById('product2-show');
+let product1Delete = document.getElementById('product1-delete');
+let product2Delete = document.getElementById('product2-delete');
+let undo1 = document.getElementById('undo1');
+let undo2 = document.getElementById('undo2');
+let deleteForever1 = document.getElementById('delete-forever1');
+let deleteForever2 = document.getElementById('delete-forever2');
+let checkOut = document.getElementById('check-out');
+let payment = document.getElementById('payment');
+
+let remember1, remember2;
+
+
 
 function totalPriceCalculator(price, otherPrice) {
     totalPrice = price + otherPrice;
@@ -86,4 +102,58 @@ product2Plus.addEventListener('click', function () {
 product2Minus.addEventListener('click', function () {
     numCount("product2-count", false);
     priceCount("product2-count", "price2", 59);
+})
+
+// Remove1 listener
+remove1.addEventListener('click', function(){
+    product1Show.style.display = 'none';
+    product1Delete.style.display = 'block';
+    remember1 = parseInt(document.getElementById('product1-count').value);
+    document.getElementById('product1-count').value = 0;
+    priceByInput('product1-count', 'price1', 1219);
+})
+
+// Remove2 listener
+remove2.addEventListener('click', function(){
+    product2Show.style.display = 'none';
+    product2Delete.style.display = 'block';
+    remember2 = parseInt(document.getElementById('product2-count').value);
+    document.getElementById('product2-count').value = 0;
+    priceByInput('product2-count', 'price2', 59);
+})
+
+// Undo1 listener
+undo1.addEventListener('click', function(){
+    product1Show.style.display = 'block';
+    product1Delete.style.display = 'none';
+    document.getElementById('product1-count').value = remember1;
+    priceByInput('product1-count', 'price1', 1219);
+})
+
+// Undo2 listener
+undo2.addEventListener('click', function(){
+    product2Show.style.display = 'block';
+    product2Delete.style.display = 'none';
+    document.getElementById('product2-count').value = remember2;
+    priceByInput('product2-count', 'price2', 59);
+})
+
+// Delete forever1 listener
+deleteForever1.addEventListener('click', function(){
+    product1Delete.style.display = 'none';
+})
+
+// Delete forever2 listener
+deleteForever2.addEventListener('click', function(){
+    product2Delete.style.display = 'none';
+})
+
+// Check Out listener
+checkOut.addEventListener('click', function(){
+    product1Show.style.display = 'none';
+    product2Show.style.display = 'none';
+    product1Delete.style.display = 'none';
+    product2Delete.style.display = 'none';
+    checkOut.style.display = 'none';
+    payment.style.display = 'block';
 })
