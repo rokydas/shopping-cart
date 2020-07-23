@@ -22,11 +22,10 @@
                         <img src="images/product-1.png" alt="">
                         <h5>iPhone 11 128GB Black</h5>
                      </div>
-
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
                            <button id="product1-minus" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="product1-count" type="text" class="form-control text-center" value="1">
+                           <input oninput="priceByInput('product1-count', 'price1', 1219)" id="product1-count" type="text" class="form-control text-center" value="1">
                            <button id="product1-plus" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
                         <h5>$<span id="price1">1219</span></h5>
@@ -44,7 +43,7 @@
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
                            <button id="product2-minus" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="product2-count" type="text" class="form-control text-center" value="1">
+                           <input oninput="priceByInput('product2-count', 'price2', 59)" id="product2-count" type="text" class="form-control text-center" value="1">
                            <button id="product2-plus" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
@@ -66,7 +65,7 @@
                      <div class="col-md-4 status">
                         <h5>$<span id="total-price">1278</span></h5>
                         <h5>$<span id="tax">5</span></h5>
-                        <h5>$<span id="total-with-tax">1278</span></h5>
+                        <h5>$<span id="total-with-tax">1283</span></h5>
                      </div>
                   </div>
                </div>
