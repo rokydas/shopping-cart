@@ -3,17 +3,23 @@ let product1Minus = document.getElementById('product1-minus');
 let product2Plus = document.getElementById('product2-plus');
 let product2Minus = document.getElementById('product2-minus');
 
+function priceByInput(inputId, priceId, unitPrice){
+    const input = parseFloat(document.getElementById(inputId).value);
+    const price = document.getElementById(priceId);
+    price.innerText = (unitPrice * input);    
+}
+
 function numCount(inputId, sign) {
     productCount = parseInt(document.getElementById(inputId).value);
-    if (!(productCount == 1 && sign == false)) {
+    if (!(productCount == 0 && sign == false)) {
         if (sign == true) productCount++;
         else productCount--;
         document.getElementById(inputId).value = productCount;
+        console.log(productCount);
     }
-
 }
 
-function priceCount(inputId, priceId, sign) {
+function priceCount(inputId, priceId, unitPrice) {
     let price = parseFloat(document.getElementById(priceId).innerHTML);
     let input = parseInt(document.getElementById(inputId).value);
     let totalPrice = parseFloat(document.getElementById("total-price").innerHTML);
@@ -21,15 +27,9 @@ function priceCount(inputId, priceId, sign) {
     let otherPrice = totalPrice - price;
     // console.log("price", price);
     // console.log("input", input);
-    if (!(input == 1 && sign == false)) {
-        if (sign == true) {
-            let pricePer1 = price / input;
-            price = pricePer1 * (input + 1);
-        }
-        else {
-            let pricePer1 = price / input;
-            price = pricePer1 * (input - 1);
-        }
+    if (!(input < 0)) {
+        price = unitPrice * input;
+        console.log("Price ", price);
         if (Math.round(price) - price == 0) document.getElementById(priceId).innerHTML = price;
         else document.getElementById(priceId).innerHTML = price.toFixed(2);
 
@@ -42,24 +42,24 @@ function priceCount(inputId, priceId, sign) {
 
 // Add listener in plusIcon for 1st product
 product1Plus.addEventListener('click', function () {
-    priceCount("product1-count", "price1", true);
     numCount("product1-count", true);
+    priceCount("product1-count", "price1", 1219);
 })
 
 // Add listener in minusIcon for 1st product
 product1Minus.addEventListener('click', function () {
-    priceCount("product1-count", "price1", false);
     numCount("product1-count", false);
+    priceCount("product1-count", "price1", 1219);
 })
 
 // Add listener in plusIcon for 2nd product
 product2Plus.addEventListener('click', function () {
-    priceCount("product2-count", "price2", true);
     numCount("product2-count", true);
+    priceCount("product2-count", "price2", 59);
 })
 
 // Add listener in minusIcon for 2nd product
 product2Minus.addEventListener('click', function () {
-    priceCount("product2-count", "price2", false);
     numCount("product2-count", false);
+    priceCount("product2-count", "price2", 59);
 })
