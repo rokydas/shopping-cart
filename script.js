@@ -41,7 +41,7 @@ function priceByInput(inputId, priceId, unitPrice) {
     document.getElementById(inputId).value = inputAsString;
     if(inputAsString.includes("-") == true){
         inputAsString = 0;
-        document.getElementById(inputId).value = "";
+        document.getElementById(inputId).value = "0";
     }
     // console.log(isNaN(inputAsString));
     if (isNaN(inputAsString) == false) {
