@@ -17,8 +17,6 @@ let payment = document.getElementById('payment');
 
 let remember1, remember2;
 
-
-
 function totalPriceCalculator(price, otherPrice) {
     totalPrice = price + otherPrice;
     let tax = totalPrice * 0.05;
@@ -40,10 +38,15 @@ function priceByInput(inputId, priceId, unitPrice) {
 
     let inputAsString = document.getElementById(inputId).value;
     if(inputAsString == "") inputAsString = "0";
-    console.log(isNaN(inputAsString));
+    document.getElementById(inputId).value = inputAsString;
+    if(inputAsString.includes("-") == true){
+        inputAsString = 0;
+        document.getElementById(inputId).value = "";
+    }
+    // console.log(isNaN(inputAsString));
     if (isNaN(inputAsString) == false) {
         input = parseFloat(inputAsString);
-        console.log(input);
+        //console.log(input);
         price = unitPrice * input;
         document.getElementById(priceId).innerText = price;
 
